@@ -42,7 +42,9 @@ class Application
     end
   end
   def add_item_if_exist(search_term)
-    if @@items.include?(search_term)
+    if @@items.find do |item|
+      item == search_term
+    end 
       @@cart << search_term
       return "Added #{search_term}"
     else
