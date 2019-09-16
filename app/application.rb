@@ -42,11 +42,12 @@ class Application
     end
   end
   def add_item_if_exist(search_term)
-    if @@items.find do |item|
+    find_item = @@items.find do |item|
       item == search_term
     end 
-      @@cart << search_term
-      return "Added #{search_term}"
+    if find_item
+      @@cart << find_item
+      return "Added #{find_item}"
     else
       return "We don't have that item"
     end
