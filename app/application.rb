@@ -29,7 +29,6 @@ class Application
     elsif req.path.match(/add/)
       add_item = req.params["item"]
       add_item_if_exist(add_item)
-      end 
     end
 
     resp.finish
